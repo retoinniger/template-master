@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title #{@page_title} | Template Master
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    
+  body
+    header
+      
+      = render "layouts/navigation"
+      
+
+    .container.mt-4
+      // devise infos
+      - if notice.present?
+        p.alert.alert-success #{notice}
+      - if alert.present?
+        p.alert.alert-info #{alert}
+        
+      main
+        = yield
+        
+      footer
+        p © Reto Inniger #{Date.current.year}
+        
