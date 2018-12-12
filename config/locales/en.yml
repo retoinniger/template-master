@@ -31,7 +31,7 @@
 
 en:
   hello: "Hello world"
-  
+  # for activerecords
   activerecord:
       attributes:
         user:  
