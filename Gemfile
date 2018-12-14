@@ -38,6 +38,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'mysql2'
 group :development, :test do
+  
+  gem 'rspec-rails', '~> 3.8'
   # Use Uglifier as compressor for JavaScript assets
   gem 'uglifier', '>= 1.3.0'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
