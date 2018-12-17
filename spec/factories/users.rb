@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :user do
-    # Ffaker calls need to be in block?! See https://github.com/EmmanuelOga/ffaker/issues/121
+    
     name                  {'Test user name'}
     email                 {'test@user.com'}
     password              {'p@ssw0rd?'}
