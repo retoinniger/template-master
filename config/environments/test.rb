@@ -39,4 +39,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  
+  # TODO: What do I need to specify this for? See http://stackoverflow.com/questions/29373253.
+  config.action_mailer.default_url_options = {host: Rails.application.secrets.default_url_host}
 end
