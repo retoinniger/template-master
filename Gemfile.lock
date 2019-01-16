@@ -250,11 +250,8 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   database_cleaner
   devise
-<<<<<<< HEAD
   enumerize
-=======
   factory_bot_rails
->>>>>>> master
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
