@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  load_and_authorize_resource
   
   def index
     @q = @users.ransack(params[:q])
@@ -26,11 +27,12 @@ class UsersController < ApplicationController
     permitted_keys = [:username,
                       :email,
                       :password,
-                      :password_confirmation]
+                      :password_confimation,
+                      :role]
 
-    permitted_keys << :role if can?(:edit_role, @user)
+    #permitted_keys << :role if can?(:edit_role, @user)
 
-    params.require(:user).permit(permitted_keys)
+    #params.require(:user).permit(permitted_keys)
   end
   
 end

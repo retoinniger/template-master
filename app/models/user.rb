@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  extend Enumerize
+  #extend Enumerize
+  after_initialize :set_default_role
+  enum role: [:user, :editor, :admin]
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -10,8 +12,6 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :username, uniqueness: {case_sensitive: false}
   
-  enumerize :role, in: [:user, :editor, :admin], default: :user
-  
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
@@ -19,5 +19,11 @@ class User < ApplicationRecord
     else
       where(conditions.to_hash).first
     end
+  end
+  
+  private
+
+  def set_default_role
+    self.role ||= :user
   end
 end
