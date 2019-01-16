@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  extend Enumerize
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -8,6 +9,8 @@ class User < ApplicationRecord
   
   validates :username, presence: true
   validates :username, uniqueness: {case_sensitive: false}
+  
+  enumerize :role, in: [:user, :editor, :admin], default: :user
   
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
