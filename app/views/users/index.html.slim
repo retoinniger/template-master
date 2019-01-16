@@ -1,0 +1,16 @@
+h1 Listing users
+
+table.table
+  thead
+    tr
+      th User Name
+      th Email
+      th Role
+      th Actions
+  tbody
+    - @users.each do |user|
+      tr
+        td = user.username
+        td = user.email
+        td = user.role
+        td = link_to 'Show', edit_user_registration_path

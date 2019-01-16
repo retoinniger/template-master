@@ -12,6 +12,9 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
           
         li.nav-item
           = link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link"
+          
+        li.nav-item
+          = link_to "show", users_path, class: "nav-link"
 
       - else 
         = link_to "Login", new_user_session_path, class: "nav-link"
