@@ -1,10 +1,20 @@
 class UsersController < ApplicationController
   #load_and_authorize_resource
+  respond_to :html
   
   def index
-    @users = User.all
+    @q = User.ransack(params[:q])
+    @users = @q.result(distinct: true)
+  end
+  
+  def show
+    @user = User.find(params[:id])
   end
 
+  def new
+    @user = User.new
+  end
+  
   def create
     @user.save
     respond_with @user
@@ -29,9 +39,9 @@ class UsersController < ApplicationController
                       :password_confimation,
                       :role]
 
-    permitted_keys << :role if can?(:edit_role, @user)
+    #permitted_keys << :role if can?(:edit_role, @user)
 
-    params.require(:user).permit(permitted_keys)
+    #params.require(:user).permit(permitted_keys)
   end
   
 end

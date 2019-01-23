@@ -1,2 +1,9 @@
-h1 User
+h1 Hello #{@user.username}
 
+dl.dl-horizontal
+  dt = User.human_attribute_name :email
+  dd.email = @user.email
+  dt = User.human_attribute_name :created_at
+  dd.created_at = l @user.created_at
+  dt = User.human_attribute_name :updated_at
+  dd.updated_at = l @user.updated_at

@@ -22,8 +22,8 @@ gem 'jquery-rails'
 gem 'slim'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'enumerize'
-
+gem 'simple_form'
+gem 'ransack'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
