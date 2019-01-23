@@ -16,6 +16,8 @@ gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 # Insert Bootstrap 4
 gem 'bootstrap', '~> 4.1.3'
+# Insert Font Awesome
+gem "font-awesome-sass", '~> 5.6.1'
 # Use JQuery
 gem 'jquery-rails'
 # Use Slim for short Html
